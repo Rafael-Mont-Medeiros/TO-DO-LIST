@@ -1,51 +1,81 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+    font-family: "Roboto Mono", monospace;
+    outline: none;
+
 }
 
 body{
-    background-color: #2361CC;
+    background: url('/img/background.png');
 }
 
-#container{
-    background-color: #FFFFFF;
-    width: 600px;
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    border-radius: 8px;
-}
-input{
-    height: 35px;
-    border-radius: 5px;
-    font-size: 15px;
-    border-color: #2361CC;
-    color: #2361CC;
-    width: 400px;
+.container{
+    background-color: #d1d1d1;
+    width: 500px;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 100px auto 0;
 }
 
-#infos {
-    margin-bottom: 35px;
-    display: flex;
-    justify-content: space-between;
-    margin-top: 35px;
-    margin-right: 20px;
-    margin-left: 20px;
-}
-
-button {
-    width: 80px;
-    background-color: #2361CC;
-    color: #FFFFFF;
+.input-task{
     border: none;
     border-radius: 5px;
-    transition: 0.5s;
+    width: 300px;
+    height: 40px;
+    padding-left: 10px; 
+    font-size: 17px;
 }
 
-button:hover{
+.input-add-task{
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    background-color: #003329;
+    color: #ffffff;
+    font-size: 17px;
+    padding: 0 15px;
+    float: right;
+    cursor: pointer;
+    transition: 0.8s;
+}
+
+.input-add-task:hover{
     opacity: 0.5;
+}
+
+.input-add-task:active{
+    opacity: 0.6;
+}
+
+.list-task{
+    width: 100%;
+    list-style: none;
+    margin-top: 20px;
+}
+
+.task{
+    background-color: #f2f2f2;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    padding: 0 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+img {
+    height: 25px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.task:hover img{
+    opacity: 1;
 }
