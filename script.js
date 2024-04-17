@@ -1,27 +1,26 @@
-const button = document.querySelector('.input-add-task')
-const input = document.querySelector('.input-task')
-const listaCompleta = document.querySelector('.list-tasks')
-let minhaListaDeItens = []
+const inputButton = document.querySelector('.input-add-task')
+inputButton.addEventListener('click', adicionarNovaTarefa)
+const inputTask = document.querySelector('.input-task')
+const listaCompleta = document.querySelector('.list-task')
+const mylist = []
 
+function adicionarNovaTarefa(){
+  mylist.push(inputTask.value)
+  inputTask.value = ''
 
-function adicionarNovaTarefa() {
-  minhaListaDeItens.push(input.value)
-  input.value = ''
-
-  mostrarTarefas() 
+  mostrarTarefas ()
 }
 
-function mostrarTarefas() {
-  let novaLi = ''
-  minhaListaDeItens.forEach(tarefa => {
+function mostrarTarefas(){
+  novaLi =''
+  mylist.forEach(tarefa => {
     novaLi = `
-      <li class="task">
-        <img src="./img/checked.png" alt="">
-        <p>${tarefa}</p>
-        <img src="./img/trash.png" alt="">
-      </li>
-      `
+    <li class="task">
+      <img src="./img/checked.png" alt="">
+      <p>${tarefa}</p>
+      <img src="./img/trash.png" alt="">
+    </li>
+    `
   })
   listaCompleta.innerHTML = novaLi
 }
-button.addEventListener('click', adicionarNovaTarefa)  
