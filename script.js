@@ -14,7 +14,7 @@ function adicionarNovaTarefa(){
 function mostrarTarefas(){
   novaLi =''
   mylist.forEach(tarefa => {
-    novaLi = `
+    novaLi = novaLi +  `
     <li class="task">
       <img src="./img/checked.png" alt="">
       <p>${tarefa}</p>
