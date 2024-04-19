@@ -5,10 +5,13 @@ const listaCompleta = document.querySelector('.list-task')
 const mylist = []
 
 function adicionarNovaTarefa(){
+  if(inputTask.value.length == 0){
+    alert('preencha o campo adicionando uma atividade/tarefa')
+  } else {
   mylist.push(inputTask.value)
   inputTask.value = ''
-
   mostrarTarefas ()
+  }
 }
 
 function mostrarTarefas(){
