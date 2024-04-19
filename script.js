@@ -13,14 +13,19 @@ function adicionarNovaTarefa(){
 
 function mostrarTarefas(){
   novaLi =''
-  mylist.forEach(tarefa => {
+  mylist.forEach((tarefa, index) => {
     novaLi = novaLi +  `
     <li class="task">
       <img src="./img/checked.png" alt="">
       <p>${tarefa}</p>
-      <img src="./img/trash.png" alt="">
+      <img src="./img/trash.png" alt="" onclick="deletItem(${index})">
     </li>
     `
   })
   listaCompleta.innerHTML = novaLi
+}
+
+function deletItem(index){
+  mylist.splice(index, 1)
+  mostrarTarefas()
 }
